@@ -1,0 +1,79 @@
+$textMain:       #F3F3F3;
+$textDim:        #76808C;
+
+$bgMain:         #0E141B;
+$bgHighlight:    #1E2329;
+$bgHover:        #313843;
+$gbSecondary:    #14344B;
+$bgTertiary:     #212B45;
+
+$colorPrimary:   #66C0F4;
+$colorSecondary: #4B619B;
+
+$accentGreen:    #A1CD44;
+$accentRed:      #CD5444;
+$accentYellow:   #C1B15F;
+
+$textHeadingLarge : normal 700 26px/1.4 "Motiva Sans", Arial, Sans-Serif;
+$textHeadingMedium: normal 700 22px/1.4 "Motiva Sans", Arial, Sans-Serif;
+$textHeadingSmall:  normal 700 18px/1.4 "Motiva Sans", Arial, Sans-Serif;
+
+$clientVisibility: visible;
+
+body {
+  margin: 0;
+  color: $textMain;
+
+  a {
+    text-decoration: none;
+    color: $textMain;
+
+    &:visited {
+      color: $textMain;
+    }
+  }
+
+  header {
+    .app {
+      background-color: $bgMain;
+      padding-left: 22px;
+      padding-right: 22px;
+      padding-top: 18px;
+      padding-bottom: 18px;
+      height: 24px;
+      display: flex;
+
+      .navigation_arrow {
+        display: inline-flex;
+        align-items: flex-start;
+        gap: 5px;
+    
+        svg {
+          cursor: pointer;
+          fill: $textDim;
+    
+          &:hover {
+            fill: $textMain;
+          }
+        }
+      }
+
+      .nav {
+        margin-left: 20px;
+        display: inline-flex;
+        align-items: flex-start;
+        gap: 66px;
+        font: $textHeadingSmall;
+        height: 22px;
+
+        img {
+          height: 24px;
+        }
+      }
+    }
+  }
+
+  .client {
+    visibility: $clientVisibility;
+  }
+}
