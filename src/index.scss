@@ -17,6 +17,9 @@ $accentYellow:   #C1B15F;
 $textHeadingLarge : normal 700 26px/1.4 "Motiva Sans", Arial, Sans-Serif;
 $textHeadingMedium: normal 700 22px/1.4 "Motiva Sans", Arial, Sans-Serif;
 $textHeadingSmall:  normal 700 18px/1.4 "Motiva Sans", Arial, Sans-Serif;
+$textBodyLarge:     normal 400 16px/1.4 "Motiva Sans", Arial, Sans-Serif;
+$textBodyMedium:    normal 400 14px/1.4 "Motiva Sans", Arial, Sans-Serif;
+$textBodySmall:     normal 400 12px/1.4 "Motiva Sans", Arial, Sans-Serif;
 
 $clientVisibility: visible;
 
@@ -62,14 +65,119 @@ body {
         margin-left: 20px;
         display: inline-flex;
         align-items: flex-start;
+        justify-content: center;
         gap: 66px;
         font: $textHeadingSmall;
         height: 22px;
+        width: 100%;
 
         img {
           height: 24px;
         }
-      }
+
+        a:hover {
+          color: $textDim;
+        }
+
+        .tab-selected {
+          color: $colorPrimary;
+        }
+
+        .action {
+          justify-content: flex-end;
+          width: 100%;
+          display: flex;
+          height: 100%;
+          gap: 100px;
+
+          .user {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            
+            .icon {
+              height: 24px;
+              cursor: pointer;
+              fill: $textDim;
+              padding-top: 6px;
+              padding-bottom: 6px;
+              padding-left: 16px;
+              padding-right: 16px;
+              background-color: $bgHighlight;
+              border-radius: 3px;
+              
+              &:hover {
+                fill: $textMain;
+                background-color: $bgHover;
+              }
+            }
+
+            .account {
+              height: 36px;
+              cursor: pointer;
+              fill: $textDim;
+              padding: 3px;
+              background-color: $bgHighlight;
+              border-radius: 3px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              gap: 10px;
+            
+              .user-image {
+                height: fit-content;
+                border-radius: 2px;
+              }
+
+              .user-name {
+                font: $textBodyMedium;
+              }
+
+              .user-wallet {
+                font: $textBodyMedium;
+                color: $textDim;
+              }
+
+              .options {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                fill: $textMain;
+              }
+
+              &:hover {
+                background-color: $bgHover;
+              }
+            }
+          }
+
+          .application {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 18px;
+            color: $textDim;
+            font: $textBodySmall;
+            fill: $textDim;
+
+            div {
+              display: flex;
+              height: 24px;
+              justify-content: center;
+              align-items: center;
+              cursor: pointer;
+
+              &:hover {
+                fill: $textMain;
+                color: $textMain;
+              }
+            }
+          }
+        }
+      }      
     }
   }
 

@@ -1,5 +1,5 @@
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom'
 import Store from './pages/Store'
 import Header from './components/Header'
 
@@ -14,6 +14,7 @@ root.render(
 			<main>
 				<Routes>
 					<Route path='/store' element={<Store/>} />
+					<Route path='/' element={<Navigate to='/store'/>} />
 				</Routes>
 			</main>
 		</Router>
