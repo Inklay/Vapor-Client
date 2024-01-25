@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react'
-import FriendsSVG from '../../assets/svg/Friends'
+import FriendsSVG from '../../../assets/svg/Friends'
 
 const Friends: FunctionComponent = () => {
   return (

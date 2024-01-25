@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react'
-import DownArrow from '../../assets/svg/DownArrow'
+import DownArrow from '../../../assets/svg/DownArrow'
 
 const Account: FunctionComponent = () => {
   return (

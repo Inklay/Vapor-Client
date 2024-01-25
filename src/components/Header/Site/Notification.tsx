@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react'
-import NotificationSVG from '../../assets/svg/Notification'
+import NotificationSVG from '../../../assets/svg/Notification'
 
 const Notification: FunctionComponent = () => {
   return (

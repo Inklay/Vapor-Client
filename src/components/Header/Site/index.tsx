@@ -1,12 +1,12 @@
 import { FunctionComponent } from 'react'
 import { useLocation } from 'react-router-dom'
-import steam_logo from '../../assets/steam_logo.png'
-import LeftArrow from '../../assets/svg/LeftArrow'
-import RightArrow from '../../assets/svg/RightArrow'
+import steam_logo from '../../../assets/steam_logo.png'
+import LeftArrow from '../../../assets/svg/LeftArrow'
+import RightArrow from '../../../assets/svg/RightArrow'
 import Friends from './Friends'
 import Notification from './Notification'
 import Account from './Account'
-import DownArrow from '../../assets/svg/DownArrow'
+import DownArrow from '../../../assets/svg/DownArrow'
 
 const Header: FunctionComponent = () => {
   const tab = useLocation().pathname.split('/')[1]
