@@ -7,6 +7,10 @@ import Friends from './Friends'
 import Notification from './Notification'
 import Account from './Account'
 import DownArrow from '../../../assets/svg/DownArrow'
+import { getClientClassName, isClient } from '../../../utils/client'
+import Minimize from '../../../assets/svg/Minimize'
+import Maximize from '../../../assets/svg/Maximize'
+import Close from '../../../assets/svg/Close'
 
 const Header: FunctionComponent = () => {
   const tab = useLocation().pathname.split('/')[1]
@@ -20,28 +24,31 @@ const Header: FunctionComponent = () => {
 
   return (
     <header>
-      <div className='app'>
-        <div className='client navigation_arrow'>
-          <RightArrow/>
-          <LeftArrow/>
-        </div>
-        <div className='nav'>
-          <img src={steam_logo} alt='Steam logo'/>
-          <a href='/store' className={isTabSelected('store', false)}>STORE</a>
-          <a href='/community' className={isTabSelected('community', false)}>COMMUNITY</a>
-          <a href='/profile' className={isTabSelected('profile', false)}>INKLAY</a>
-          <a href='/library' className={isTabSelected('library', true)}>LIBRARY</a>
-          <a href='/downloads' className={isTabSelected('downloads', true)}>DOWNLOADS</a>
-          <div className='action'>
-            <div className='user'>
-              <Friends/>
-              <Notification/>
-              <Account/>
+      <div className={getClientClassName('navigation_arrow')}>
+        <RightArrow/>
+        <LeftArrow/>
+      </div>
+      <div className='nav'>
+        <img src={steam_logo} alt='Steam logo'/>
+        <a href='/store' className={isTabSelected('store', false)}>STORE</a>
+        <a href='/community' className={isTabSelected('community', false)}>COMMUNITY</a>
+        <a href='/profile' className={isTabSelected('profile', false)}>INKLAY</a>
+        <a href='/library' className={getClientClassName(isTabSelected('library', true))}>LIBRARY</a>
+        <a href='/downloads' className={getClientClassName(isTabSelected('downloads', true))}>DOWNLOADS</a>
+        <div className='action'>
+          <div className='user'>
+            <Friends/>
+            <Notification/>
+            <Account/>
+          </div>
+          <div className='application'>
+            <div>Help</div>
+            <div>View <DownArrow/></div>
+            <div onClick={() => {window.ipcRenderer.send('minimizeApp')}} id='minimize' className={getClientClassName('window')}>
+              <Minimize/>
             </div>
-            <div className='client application'>
-              <div>Help</div>
-              <div>View <DownArrow/></div>
-            </div>
+            <div onClick={() => {window.ipcRenderer.send('maximizeApp')}} id='maximize' className={getClientClassName('window')}><Maximize/></div>
+            <div onClick={() => {window.ipcRenderer.send('closeApp')}} id='close' className={getClientClassName('window')}><Close/></div>
           </div>
         </div>
       </div>

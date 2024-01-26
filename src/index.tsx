@@ -2,8 +2,13 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom'
 import Store from './pages/Store'
 import Header from './components/Header/Site'
-
 import './index.scss';
+
+declare global {
+  interface Window {
+    ipcRenderer: any
+  }
+}
 
 const container = document.getElementById('root')
 const root = createRoot(container!)
